@@ -9,7 +9,7 @@ export default function(props) {
             </div>
             <div className='block-text'>
                 <span className='block-text-heading'>Lorem Ipsum</span><br></br>
-                <span className='block-lower-text'>something or other</span>
+                <span className='block-lower-text'>Est venatis</span>
             </div>
         </div>
     )

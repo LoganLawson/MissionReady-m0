@@ -1,23 +1,27 @@
 import { useState } from "react";
 import "../styles/Navbar.css";
-import logo from'../logo192.png';
+import logo from'../images/logo.png';
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+    function handleNavExtend() {
+        setIsNavbarExpanded(!isNavbarExpanded)
+        props.extendNav(!isNavbarExpanded)
+    }
     return (
         <nav className='navbar'>
-            <img src={logo} alt='logo' style={{width: '20px', height: '20px', marginLeft: '1rem'}} />
+            <img src={logo} alt='logo' style={{width: '4vh', height: '4vh', marginLeft: '2vw', '&:hover': {background: '#A3B4BF'}}} />
             <a className='company-name'>
-                 My company
+                Peak
             </a>
             <button
                 className='hamburger'
-                onClick={() => {setIsNavbarExpanded(!isNavbarExpanded)}}
+                onClick={handleNavExtend}
             >
                 <svg
                     className="h-5 w-5"
                     viewBox="0 0 20 20"
-                    fill="black"
+                    fill="white"
                 >
                 <path
                     fillRule="evenodd"

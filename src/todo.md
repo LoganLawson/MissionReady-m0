@@ -1,4 +1,5 @@
 # to do
+* email ram about my lack of web dev experience
 ## code
 * fix spacing
 * fix responsiveness

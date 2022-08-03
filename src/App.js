@@ -1,5 +1,7 @@
 import './App.css';
 import './style.css';
+import MediaQuery from "react-responsive";
+import React, { useRef, useState } from "react";
 
 // images
 import background from './images/mountain.jpg';
@@ -12,9 +14,13 @@ import Navbar from './components/Navbar';
 import ImageBlock from './components/ImageBlock';
 
 function App() {
-  return (
-    <div>
-      <Navbar />
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+  function extendNav(isNavbarExpanded) {
+    setIsNavbarExpanded(isNavbarExpanded)
+  }
+  const fullPage = (
+    <div className='bg-container'>
+      <Navbar extendNav={extendNav}/>
       <section className='section-1' style={{
           backgroundImage: `url(${background})`,
           width: 100+'%',
@@ -28,7 +34,7 @@ function App() {
             <h1>Lorem Ipsum <br></br> dolor sit amet</h1>
           </div>
           <div className='search-bar'>
-            <input></input> <button>Search</button>
+            <input></input> <button>SEARCH</button>
           </div>
           
         </div>
@@ -38,8 +44,17 @@ function App() {
         <ImageBlock imageSource={climb2}/>
         <ImageBlock imageSource={climb3}/>
       </section>
-      <footer>
-      </footer>
+    </div>
+  )
+  const navOnly = (
+    <div className='bg-container'>
+      <Navbar extendNav={extendNav}/>
+    </div>
+    )
+  
+  return (
+    <div>
+      {isNavbarExpanded ? navOnly : fullPage}
     </div>
   );
 }

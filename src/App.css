@@ -1,45 +1,10 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-container {
+  background-color: #212426;
 }
 
 .section-1 {
-  padding: 5px;
-  height: calc(60vh - 40px);
+  height: 55vh;
+  background-color: #212426;
 }
 
 .section-1-overlay {
@@ -48,8 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 5px;
-  height: calc(60vh - 40px);
+  height: calc(55vh);
 }
 
 .section-1-overlay-text {
@@ -59,8 +23,8 @@
   height: 66%;
 }
 .section-1-overlay-text h1 {
-  color: azure;
-  font-size: xx-large;
+  color: #F2F2F2;
+  font-size: 3rem;
   font-style: bold;
 
 }
@@ -76,17 +40,83 @@
 .search-bar input {
   flex-grow: 2;
   height: 30px;
+  background-color: #f2f2f2;
+  border: #212426;
 }
 .search-bar button {
   width: 100px;
   height: 30px;
+  background-color: #8C8C8C;
+  border: 0ch;
+  color: #F2F2F2;
 }
 
 .section-2 {
+  position: absolute;
   width: 100%;
-  height: calc(100vh - (60vh - 40px));
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 5%;
+  gap: 5vmin;
+  padding: 5vmin;
+  background-color: #212426;
+}
+
+
+@media screen and (max-width: 500px) {
+  .section-1 {
+    height: 45vh;
+  }
+  
+  .section-1-overlay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(45vh);
+  }
+  
+  .section-1-overlay-text {
+    display: flex;
+    padding: 5%;
+    width: 100%;
+    height: 40%;
+  }
+  .section-1-overlay-text h1 {
+    color: #F2F2F2;
+    font-size: 4vh;
+    font-style: bold;
+  }
+  
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    padding: 5% 5%;
+  }
+  .search-bar input {
+    width: 100%;
+    height: 50%;
+    margin: 2% 0;
+  }
+  .search-bar button {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 1vh;
+  }
+
+  .section-2 {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5vmin;
+    padding: 5vmin;
+  }
 }
