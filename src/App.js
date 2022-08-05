@@ -16,7 +16,7 @@ import ImageBlock from './components/ImageBlock';
 function App() {
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
   function extendNav(isNavbarExpanded) {
-    setIsNavbarExpanded(isNavbarExpanded)
+    setIsNavbarExpanded(true)
   }
   const fullPage = (
     <div className='bg-container'>
