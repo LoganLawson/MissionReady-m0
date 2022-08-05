@@ -36,9 +36,9 @@ export default function Navbar(props) {
                   }
             >
                 <ul>
-                <li><a href="/Menu1">Menu 1</a></li>
-                <li><a href="/Menu2">Menu 2</a></li>
-                <li><a href="/Menu3">Menu 3</a></li>
+                <li><a href="/Menu1">Home</a></li>
+                <li><a href="/Menu2">About</a></li>
+                <li><a href="/Menu3">Contact</a></li>
                 <li><a href="/login" className='navigation-menu-login'>Login</a></li> 
                 </ul>
             </div>

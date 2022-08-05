@@ -13,7 +13,17 @@ import climb3 from './images/climb3.jpg'
 import Navbar from './components/Navbar';
 import ImageBlock from './components/ImageBlock';
 
+const IMAGE_BLOCK_CONTENT = [
+  { headerText:'Mountain ski tours', bodyText:'Ditch the park and explore the alps with our experienced ski guides', image:climb1},
+  { headerText:'Peak tours', bodyText:'Test your limits and experience the thrill of conquering a summit', image:climb2},
+  { headerText:'Team building', bodyText:'Build trust in your team working together in high pressure scenarios', image:climb3},
+]
+
 function App() {
+  const imageBlockContent = IMAGE_BLOCK_CONTENT?.map((content) => (
+    <ImageBlock headerText={content.headerText} bodyText={content.bodyText} image={content.image} />
+  ));
+
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
   function extendNav(isNavbarExpanded) {
     setIsNavbarExpanded(true)
@@ -27,11 +37,14 @@ function App() {
           heigth: 100+'%',
           backgroundSize: 'cover',
           overflow: 'hidden',
+          
         }}
       >
+        <div className='background'></div>
         <div className='section-1-overlay' >
           <div className='section-1-overlay-text'>
-            <h1>Lorem Ipsum <br></br> dolor sit amet</h1>
+            <span style={{fontWeight: 300}}>Peaked?</span>
+            <span>Find a new mountain.</span>
           </div>
           <div className='search-bar'>
             <input></input> <button>SEARCH</button>
@@ -40,9 +53,7 @@ function App() {
         </div>
       </section>
       <section className='section-2'>
-        <ImageBlock imageSource={climb1}/>
-        <ImageBlock imageSource={climb2}/>
-        <ImageBlock imageSource={climb3}/>
+          {imageBlockContent}
       </section>
     </div>
   )
